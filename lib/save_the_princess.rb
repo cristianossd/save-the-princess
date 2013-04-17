@@ -1,3 +1,2 @@
 # lib/save_the_princess.rb
-#inicialmente vazio
-puts "Ta funcionando"
+require "save_the_princess/die.rb"
