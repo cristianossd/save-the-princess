@@ -32,6 +32,10 @@
 	text-decoration: none;
 }
 
+#content {
+	margin-top: 10px;
+}
+
 td {
 	padding: 5px;
 }
