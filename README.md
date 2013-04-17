@@ -11,3 +11,5 @@ Characters battle each other to save the princess. Battles based on the rules of
 * Registration of teams
 * Registration dungeons
 * Battles
+
+Enjoy the adventure!
