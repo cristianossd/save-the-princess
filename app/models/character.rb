@@ -7,12 +7,12 @@ class Character
 
 	# Character constructor
 	def initialize(params = {})
-		@name 			= params[:name] || ""
-		@strength 		= params[:strength] || 0
-		@skill 			= params[:skill] || 0
-		@armor 			= params[:armor] || 0
-		@resistance 	= params[:resistance] || 0
-		@fire_power 	= params[:fire_power] || 0
+		@name = params[:name] || ""
+		@strength = params[:strength] || 0
+		@skill = params[:skill] || 0
+		@armor = params[:armor] || 0
+		@resistance = params[:resistance] || 0
+		@fire_power = params[:fire_power] || 0
 
 		calculate_health_points
 	end
