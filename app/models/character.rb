@@ -3,6 +3,7 @@ class Character
 	# Character profile attributes
 	attr_accessor :name
 	attr_accessor :strength, :skill, :armor, :resistance, :fire_power
+	attr_accessor :current_hp
 	attr_reader :health_points
 
 	# Character constructor
@@ -29,6 +30,14 @@ class Character
 		armor.times.collect do
 			Die.roll
 		end.inject(:+)
+	end
+
+	def alive?
+		!knocked_out?
+	end
+
+	def knocked_out?
+		current_hp <= 0
 	end
 	
 	private
