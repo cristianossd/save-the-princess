@@ -2,24 +2,43 @@
 class Character
 	# Character profile attributes
 	attr_accessor :name
+	attr_accessor :strength, :skill, :armor, :resistance, :fire_power
+	attr_accessor :health_points
 
-	# Character's actions
+	# Character constructor
+	def initialize(params = {})
+		@name 		= params[:name] || ""
+		@strength 	= params[:strength] || 0
+		@skill 		= params[:skill] || 0
+		@armor 		= params[:armor] || 0
+		@resistance = params[:resistance] || 0
+		@fire_power = params[:fire_power] || 0
 
-	def self.attack()
-		puts "What the strenght?"
-		strenght = gets.to_i
-
-		attk = strenght.times.collect do
-			rand(6)+1
-		end.injected(:+)
+		calculate_health_points
 	end
 
-	def self.defense()
-		puts "What the armor?"
-		armor = gets.to_i
+	# Calculate attack for strenght
+	def attack()
+		strength.times.collect do
+			Die.roll
+		end.inject(:+)
+	end
 
-		defs = armor.times.collect do
-			rand(6)+1
-		end.injected(:+)
+	# Calculate defend for armor
+	def defend()
+		armor.times.collect do
+			Die.roll
+		end.inject(:+)
+	end
+	
+	# Calculate health points for resistance
+	def calculate_health_points()
+		if (resistance == 0)
+			@health_points = 1
+		else
+			@health_points = resistance.times.collect do
+				Die.roll
+			end.inject(:+)
+		end
 	end
 end
