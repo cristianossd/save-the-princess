@@ -3,7 +3,7 @@ class Character
 	# Character profile attributes
 	attr_accessor :name
 	attr_accessor :strength, :skill, :armor, :resistance, :fire_power
-	attr_accessor :health_points
+	attr_reader :health_points
 
 	# Character constructor
 	def initialize(params = {})
@@ -31,6 +31,7 @@ class Character
 		end.inject(:+)
 	end
 	
+	private
 	# Calculate health points for resistance
 	def calculate_health_points()
 		if (resistance == 0)
