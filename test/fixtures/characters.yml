@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  strength: 1
+  skill: 1
+  resistance: 1
+  armor: 1
+  fire_power: 1
+  health_points: 1
+
+two:
+  name: MyString
+  strength: 1
+  skill: 1
+  resistance: 1
+  armor: 1
+  fire_power: 1
+  health_points: 1

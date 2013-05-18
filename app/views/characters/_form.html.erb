@@ -1,0 +1,45 @@
+<%= form_for(@character) do |f| %>
+  <% if @character.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@character.errors.count, "error") %> prohibited this character from being saved:</h2>
+
+      <ul>
+      <% @character.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :strength %><br />
+    <%= f.number_field :strength %>
+  </div>
+  <div class="field">
+    <%= f.label :skill %><br />
+    <%= f.number_field :skill %>
+  </div>
+  <div class="field">
+    <%= f.label :resistance %><br />
+    <%= f.number_field :resistance %>
+  </div>
+  <div class="field">
+    <%= f.label :armor %><br />
+    <%= f.number_field :armor %>
+  </div>
+  <div class="field">
+    <%= f.label :fire_power %><br />
+    <%= f.number_field :fire_power %>
+  </div>
+  <div class="field">
+    <%= f.label :health_points %><br />
+    <%= f.number_field :health_points %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
